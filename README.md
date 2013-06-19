@@ -13,12 +13,11 @@ For those with heroku experience this should be pretty easy.
 5. Promote the database `heroku pg:promote HEROKU_POSTGRESQL_CYAN_URL` Note: replace CYAN with the color from the previous command.
 6. Set kegbot config path `heroku config:add KEGBOT_SETTINGS_DIR=/app/`
 7. Initialize database
-
 ````
-heroku run kegbot syncdb --all --noinput -v 0
-heroku run kegbot migrate --all --fake --noinput -v 0
-````
+  heroku run kegbot syncdb --all --noinput -v 0
 
+  heroku run kegbot migrate --all --fake --noinput -v 0
+````
 8. Visit site `heroku open` and finish initial configuration
 
 ## Known Issues

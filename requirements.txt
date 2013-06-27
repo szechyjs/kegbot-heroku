@@ -1,7 +1,7 @@
 Django==1.5.1
 Pillow==1.7.8
 South==0.8.1
-amqp==1.0.11
+amqp==1.0.12
 anyjson==0.3.3
 argparse==1.2.1
 billiard==2.7.3.28
@@ -11,7 +11,7 @@ dj-database-url==0.2.1
 django-appconf==0.6
 django-bootstrap-pagination==0.1.10
 django-celery==3.0.17
-django-crispy-forms==1.3.1
+django-crispy-forms==1.2.8
 django-icanhaz==0.2.1
 django-imagekit==2.0.2
 django-kombu==0.9.4
@@ -23,10 +23,10 @@ foursquare==20130402
 gunicorn==0.17.4
 httplib2==0.8
 isodate==0.4.9
--e git+https://github.com/Kegbot/kegbot.git@9cccd5bdd071d05bd03e776d92d447e70a5fec79#egg=kegbot-dev
+-e git+https://github.com/Kegbot/kegbot.git@da9b0214fd23836cf24946e7f8a46a22bf8fd107#egg=kegbot-dev
 kegbot-api==0.1.8
 kegbot-pyutils==0.1.7
-kombu==2.5.10
+kombu==2.5.11
 mock==1.0.1
 nose==1.3.0
 oauth2==1.5.211
@@ -35,7 +35,7 @@ protobuf==2.5.0
 psycopg2==2.5
 python-dateutil==2.1
 python-gflags==2.0
-python-memcached==1.53
+python-memcached==1.51
 python-openid==2.2.5
 pytz==2013b
 requests==1.2.3

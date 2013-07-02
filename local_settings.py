@@ -22,6 +22,14 @@ SECRET_KEY = 'p7jep28p$+7kb8n=qr+1!i80&5d&!2q_lruhs-%rs(urq4)f*j'
 TIME_ZONE = 'America/New_York'
 
 ### Media and Static Files
+import os
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+AWS_QUERYSTRING_AUTH = False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_S3_CUSTOM_DOMAIN = os.environ['AWS_S3_CUSTOM_DOMAIN']
 
 KEGBOT_ROOT = ''
 
@@ -39,7 +47,7 @@ STATIC_ROOT = ''
 
 # URL of the directory above. The default is '/static/'. Note that the directory
 # name given in STATIC_ROOT does not affect this.
-STATIC_URL = '/static/'
+STATIC_URL = 'http://' + os.environ['AWS_S3_CUSTOM_DOMAIN'] + '/'
 
 ### Facebook
 

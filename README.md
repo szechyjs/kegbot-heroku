@@ -2,6 +2,11 @@
 
 This is ready to deploy repo for hosting Kegbot on Heroku.
 
+## Requirements
+
+* A Heroku account
+* An AWS account and S3 bucket
+
 ## Quick start
 
 For those with heroku experience this should be pretty easy.
@@ -9,26 +14,25 @@ For those with heroku experience this should be pretty easy.
 1. Clone this repository
 2. Create heroku app `heroku create`
 3. Push to heroku `git push heroku master`
-4. Add database `heroku addons:add heroku-postgresql:dev`
-5. Promote the database `heroku pg:promote HEROKU_POSTGRESQL_CYAN_URL` Note: replace CYAN with the color from the previous command.
-6. Set kegbot config path `heroku config:add KEGBOT_SETTINGS_DIR=/app/`
-7. Initialize database
+4. Add New Relic for monitoring `heroku addons:add newrelic`
+5. Add database `heroku addons:add heroku-postgresql:dev`
+6. Promote the database `heroku pg:promote HEROKU_POSTGRESQL_CYAN_URL` Note: replace CYAN with the color from the previous command.
+7. Set kegbot config path `heroku config:add KEGBOT_SETTINGS_DIR=/app/`
+8. Initialize database
 ````
   heroku run kegbot syncdb --all --noinput -v 0
 
   heroku run kegbot migrate --all --fake --noinput -v 0
 ````
-8. Visit site `heroku open` and finish initial configuration
-
-## Known Issues
-
-* No support for media images (mugshots, session pictures, etc...)
-* Poor performance due to use of django development server
-
-## TODO
-
-* Add S3 storage for both static and media
-* Switch to gunicorn (requires S3 storage first)
+9. Set the following config variables for you S3 bucket.
+````
+  heroku config:add AWS_ACCESS_KEY_ID="XXXXXXXXXXXXXXXXXXXX"
+  heroku config:add AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  heroku config:add AWS_STORAGE_BUCKET_NAME="bbbbbbbb"
+  heroku config:add AWS_S3_CUSTOM_DOMAIN="bbbbbbbb.s3.amazonaws.com"
+  ````
+9. Upload static files to S3 bucket `heroku run kegbot collectstatic`
+10. Visit site `heroku open` and finish initial configuration
 
 ## Contributing
 

@@ -15,12 +15,6 @@ DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'p7jep28p$+7kb8n=qr+1!i80&5d&!2q_lruhs-%rs(urq4)f*j'
 
-### Timezone and language
-
-# Local time zone for this installation. All choices can be found here:
-# http://www.postgresql.org/docs/8.1/static/datetime-keywords.html#DATETIME-TIMEZONE-SET-TABLE
-TIME_ZONE = 'America/New_York'
-
 ### Media and Static Files
 import os
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
@@ -48,6 +42,20 @@ STATIC_ROOT = ''
 # URL of the directory above. The default is '/static/'. Note that the directory
 # name given in STATIC_ROOT does not affect this.
 STATIC_URL = 'http://' + os.environ['AWS_S3_CUSTOM_DOMAIN'] + '/'
+
+### Cache
+import urlparse
+import json
+CACHES = {
+    'default': {
+        'BACKEND': 'django_bmemcached.memcached.BMemcached',
+        'LOCATION': os.environ.get('MEMCACHEDCLOUD_SERVERS').split(','),
+        'OPTIONS': {
+            'username': os.environ.get('MEMCACHEDCLOUD_USERNAME'),
+            'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD')
+        }
+    }
+}
 
 ### Facebook
 

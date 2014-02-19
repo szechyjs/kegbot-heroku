@@ -44,18 +44,8 @@ STATIC_ROOT = ''
 STATIC_URL = 'http://' + os.environ['AWS_S3_CUSTOM_DOMAIN'] + '/'
 
 ### Cache
-import urlparse
-import json
-CACHES = {
-    'default': {
-        'BACKEND': 'django_bmemcached.memcached.BMemcached',
-        'LOCATION': os.environ.get('MEMCACHEDCLOUD_SERVERS').split(','),
-        'OPTIONS': {
-            'username': os.environ.get('MEMCACHEDCLOUD_USERNAME'),
-            'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD')
-        }
-    }
-}
+from memcacheify import memcacheify
+CACHES = memcacheify()
 
 ### Facebook
 

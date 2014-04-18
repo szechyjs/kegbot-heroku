@@ -7,7 +7,7 @@ argparse==1.2.1
 billiard==3.3.0.16
 boto==2.25.0
 celery==3.1.6
-distribute==0.6.24
+distribute
 dj-database-url==0.2.2
 django-appconf==0.6
 django-bootstrap-pagination==0.1.10

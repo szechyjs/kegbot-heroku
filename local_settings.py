@@ -6,6 +6,8 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+import os
+
 ### Database configuration
 import dj_database_url
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
@@ -13,10 +15,9 @@ DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 ### General
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'p7jep28p$+7kb8n=qr+1!i80&5d&!2q_lruhs-%rs(urq4)f*j'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 ### Media and Static Files
-import os
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
@@ -46,6 +47,11 @@ STATIC_URL = 'http://' + os.environ['AWS_S3_CUSTOM_DOMAIN'] + '/'
 ### Cache
 from memcacheify import memcacheify
 CACHES = memcacheify()
+
+### Celery
+
+BROKER_URL = os.environ['REDIS_URL']
+CELERY_RESULT_BACKEND = os.environ['REDIS_URL']
 
 ### Facebook
 

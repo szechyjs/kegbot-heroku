@@ -1,4 +1,4 @@
-Django==1.6.4
+Django==1.6.5
 MySQL-python==1.2.5
 Pillow==2.4.0
 South==0.8.4
@@ -23,8 +23,8 @@ gunicorn==18.0
 httplib2==0.9
 isodate==0.4.9
 jsonfield==0.9.20
-kegbot==0.9.34
-kegbot-api==0.1.15
+kegbot==0.9.35
+kegbot-api==0.1.16
 kegbot-pyutils==0.1.7
 kombu==3.0.16
 mock==1.0.1

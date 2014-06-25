@@ -4,8 +4,8 @@ Pillow==2.4.0
 South==0.8.4
 amqp==1.4.5
 anyjson==0.3.3
-billiard==3.3.0.17
-boto==2.28.0
+billiard==3.3.0.18
+boto==2.29.1
 celery==3.1.11
 dj-database-url==0.3.0
 django-appconf==0.6
@@ -23,12 +23,12 @@ gunicorn==18.0
 httplib2==0.9
 isodate==0.4.9
 jsonfield==0.9.20
-kegbot==0.9.35
+kegbot==1.0.0
 kegbot-api==0.1.16
 kegbot-pyutils==0.1.7
 kombu==3.0.16
 mock==1.0.1
-newrelic==2.18.1.15
+newrelic==2.22.0.19
 oauth2==1.5.211
 pilkit==1.1.9
 protobuf==2.5.0
@@ -39,6 +39,6 @@ python-openid==2.2.5
 pytz==2014.2
 redis==2.9.1
 requests==2.2.1
-six==1.6.1
+six==1.7.2
 tweepy==2.2
 wsgiref==0.1.2

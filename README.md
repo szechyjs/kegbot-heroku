@@ -38,6 +38,14 @@ For those with heroku experience this should be pretty easy.
 1. Upload static files to S3 bucket `heroku run kegbot collectstatic`
 1. Visit site `heroku open` and finish initial configuration
 
+## Upgrading
+
+To upgrade your server installation simply pull the latest version of this repo from github
+and push it to heroku. Provided no configuration changes are necessary just run the
+following command.
+
+        heroku run kegbot upgrade
+
 ## Contributing
 
 Please report issues or send a pull request.

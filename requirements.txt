@@ -23,7 +23,7 @@ gunicorn==18.0
 httplib2==0.9
 isodate==0.4.9
 jsonfield==0.9.20
-kegbot==1.0.0
+kegbot==1.0.1
 kegbot-api==0.1.16
 kegbot-pyutils==0.1.7
 kombu==3.0.16

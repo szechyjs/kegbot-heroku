@@ -1,5 +1,7 @@
 # Kegbot on Heroku
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 This is ready to deploy repo for hosting Kegbot on Heroku.
 
 ## Requirements

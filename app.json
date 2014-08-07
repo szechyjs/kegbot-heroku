@@ -1,0 +1,41 @@
+{
+  "name": "Kegbot Server",
+  "description": "Kegbot Server, the internet beer kegerator monitoring system.",
+  "website": "https://kegbot.org",
+  "repository": "https://github.com/szechyjs/kegbot-heroku",
+  "logo": "https://kegbotdotorg.s3.amazonaws.com/static/images/press/kegbot-logo.png",
+  "keywords": ["kegbot", "python", "django"],
+  "success_url": "/",
+  "addons": [
+    "newrelic:stark",
+    "memcachier",
+    "heroku-postgresql",
+    "redistogo"
+  ],
+  "env": {
+    "KEGBOT_SETTINGS_DIR": "/app",
+    "SECRET_KEY": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "description": "AWS access key",
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "description": "AWS secret key",
+      "required": true
+    },
+    "AWS_STORAGE_BUCKET_NAME": {
+      "description": "AWS S3 bucket name",
+      "required": true
+    },
+    "AWS_S3_CUSTOM_DOMAIN": {
+      "description": "AWS S3 bucket domain",
+      "required": true
+    }
+  },
+  "scripts": {
+    "postdeploy": "kegbot syncdb --all --noinput -v 0 && kegbot migrate --all --fake --noinput -v 0 && kegbot collectstatic"
+  }
+}

@@ -50,8 +50,8 @@ CACHES = memcacheify()
 
 ### Celery
 
-BROKER_URL = os.environ['REDIS_URL']
-CELERY_RESULT_BACKEND = os.environ['REDIS_URL']
+BROKER_URL = os.environ['REDISTOGO_URL']
+CELERY_RESULT_BACKEND = os.environ['REDISTOGO_URL']
 
 ### Facebook
 

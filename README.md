@@ -19,10 +19,8 @@ For those with heroku experience this should be pretty easy.
 1. Add New Relic for monitoring `heroku addons:add newrelic`
 1. Add MemCachier `heroku addons:add memcachier`
 1. Add database `heroku addons:add heroku-postgresql:dev`
-1. Promote the database `heroku pg:promote HEROKU_POSTGRESQL_CYAN_URL` Note: replace CYAN with the color from the previous command.
 1. Add redis `heroku addons:add redistogo`
 1. Copy the redis url from `heroku config | grep REDISTOGO`
-1. Run `heroku config:add REDIS_URL=redis://...` using the url from the previous step.
 1. Set kegbot config path `heroku config:add KEGBOT_SETTINGS_DIR=/app/`
 1. Set a django secret key `heroku config:add SECRET_KEY=...` (you can generate one here - http://www.miniwebtool.com/django-secret-key-generator/)
 1. Set the following config variables for your S3 bucket.

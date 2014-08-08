@@ -13,7 +13,7 @@
     "redistogo"
   ],
   "env": {
-    "KEGBOT_SETTINGS_DIR": "/app",
+    "KEGBOT_SETTINGS_DIR": "/app/",
     "SECRET_KEY": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"

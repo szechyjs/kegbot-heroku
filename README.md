@@ -6,12 +6,14 @@ This is ready to deploy repo for hosting Kegbot on Heroku.
 
 ## Requirements
 
-* A Heroku account
-* An AWS account and S3 bucket
+* A Heroku account - free for single dyno apps like this
+* An AWS account and S3 bucket - costs less than $1/month
 
 ## Quick start
 
-For those with heroku experience this should be pretty easy.
+For those with heroku experience and want to be able to track changes to this
+repository follow the directions below. For those that don't, just press the
+Deploy to Heroku button above.
 
 1. Clone this repository
 1. Create heroku app `heroku create`
@@ -20,9 +22,11 @@ For those with heroku experience this should be pretty easy.
 1. Add MemCachier `heroku addons:add memcachier`
 1. Add database `heroku addons:add heroku-postgresql:dev`
 1. Add redis `heroku addons:add redistogo`
-1. Copy the redis url from `heroku config | grep REDISTOGO`
-1. Set kegbot config path `heroku config:add KEGBOT_SETTINGS_DIR=/app/`
-1. Set a django secret key `heroku config:add SECRET_KEY=...` (you can generate one here - http://www.miniwebtool.com/django-secret-key-generator/)
+1. Add postmark `heroku addons:add postmark`
+1. Set kegbot config path `heroku config:add KEGBOT_SETTINGS_DIR="/app/"`
+1. Set a django secret key `heroku config:add SECRET_KEY='...'`
+(you can generate one here - http://www.miniwebtool.com/django-secret-key-generator/)
+1. Set your outgoing email address `heroku config:add EMAIL_FROM_ADDRESS="kegbot@example.com"`
 1. Set the following config variables for your S3 bucket.
 
         heroku config:add AWS_ACCESS_KEY_ID="XXXXXXXXXXXXXXXXXXXX"
@@ -38,11 +42,20 @@ For those with heroku experience this should be pretty easy.
 1. Upload static files to S3 bucket `heroku run kegbot collectstatic`
 1. Visit site `heroku open` and finish initial configuration
 
+**Note:** Once the site is deployed you must register your outgoing email address
+with Postmark before emails will actually send. This can be done through the
+Postmark configuration page, accessible from the addons section of your deployed
+Heroku app.
+
 ## Upgrading
 
-To upgrade your server installation simply pull the latest version of this repo from github
-and push it to heroku. Provided no configuration changes are necessary just run the
-following command.
+To upgrade your server installation simply pull the latest version of this repo
+from github and push it to heroku. Provided no configuration changes are
+necessary just run the following command.
+
+**Note:** You can only use this upgrade path if you did not use the Deploy to
+Heroku button deployment option. If you used the Heroku Button the deployed
+repository will no longer track this repo.
 
         heroku run kegbot upgrade
 

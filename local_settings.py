@@ -60,6 +60,9 @@ EMAIL_FROM_ADDRESS = os.environ['EMAIL_FROM_ADDRESS']
 POSTMARK_SENDER = os.environ['EMAIL_FROM_ADDRESS']
 POSTMARK_API_KEY = os.environ['POSTMARK_API_KEY']
 
+from pykeg.settings import LOGGING
+LOGGING['handlers']['redis']['url'] = os.environ['REDISTOGO_URL']
+
 ### Facebook
 
 # Want to use Facebook Connect for registration/login? You will need to set

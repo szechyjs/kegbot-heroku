@@ -52,6 +52,7 @@ CACHES = memcacheify()
 
 BROKER_URL = os.environ['REDISTOGO_URL']
 CELERY_RESULT_BACKEND = os.environ['REDISTOGO_URL']
+CELERY_ALWAYS_EAGER = True
 
 ### E-mail
 EMAIL_BACKEND = 'postmark.django_backend.EmailBackend'

@@ -53,6 +53,12 @@ CACHES = memcacheify()
 BROKER_URL = os.environ['REDISTOGO_URL']
 CELERY_RESULT_BACKEND = os.environ['REDISTOGO_URL']
 
+### E-mail
+EMAIL_BACKEND = 'postmark.django_backend.EmailBackend'
+EMAIL_FROM_ADDRESS = os.environ['EMAIL_FROM_ADDRESS']
+POSTMAKR_SENDER = os.environ['EMAIL_FROM_ADDRESS']
+POSTMARK_API_KEY = os.environ['POSTMARK_API_KEY']
+
 ### Facebook
 
 # Want to use Facebook Connect for registration/login? You will need to set

@@ -10,7 +10,8 @@
     "newrelic:stark",
     "memcachier",
     "heroku-postgresql",
-    "redistogo"
+    "redistogo",
+    "postmark"
   ],
   "env": {
     "KEGBOT_SETTINGS_DIR": "/app/",
@@ -32,6 +33,10 @@
     },
     "AWS_S3_CUSTOM_DOMAIN": {
       "description": "AWS S3 bucket domain",
+      "required": true
+    },
+    "EMAIL_FROM_ADDRESS": {
+      "description": "Email address to send emails from. This uses Postmark to send emails, after deployment be sure to add this email address in Postmark through the Heroku addons interface",
       "required": true
     }
   },

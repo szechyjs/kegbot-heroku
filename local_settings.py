@@ -57,7 +57,7 @@ CELERY_ALWAYS_EAGER = True
 ### E-mail
 EMAIL_BACKEND = 'postmark.django_backend.EmailBackend'
 EMAIL_FROM_ADDRESS = os.environ['EMAIL_FROM_ADDRESS']
-POSTMAKR_SENDER = os.environ['EMAIL_FROM_ADDRESS']
+POSTMARK_SENDER = os.environ['EMAIL_FROM_ADDRESS']
 POSTMARK_API_KEY = os.environ['POSTMARK_API_KEY']
 
 ### Facebook

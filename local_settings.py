@@ -63,28 +63,4 @@ POSTMARK_API_KEY = os.environ['POSTMARK_API_KEY']
 from pykeg.settings import LOGGING
 LOGGING['handlers']['redis']['url'] = os.environ['REDISTOGO_URL']
 
-### Facebook
-
-# Want to use Facebook Connect for registration/login? You will need to set
-# these values up to the correct strings.
-FACEBOOK_API_KEY = None
-FACEBOOK_SECRET_KEY = None
-
-### Twitter
-
-TWITTER_CONSUMER_KEY = ''
-TWITTER_CONSUMER_SECRET_KEY =''
-
-### Foursquare
-
-FOURSQUARE_CLIENT_ID = ''
-FOURSQUARE_CLIENT_SECRET = ''
-FOURSQUARE_REQUEST_PERMISSIONS = ''
-
-### Untappd
-
-# You'll need an API key from Untappd to enable Untappd features.
-UNTAPPD_API_KEY = ''
-GMT_OFFSET = '-5'
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

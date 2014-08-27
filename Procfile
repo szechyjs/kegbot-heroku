@@ -1,1 +1,1 @@
-web: newrelic-admin run-program kegbot run_gunicorn -b "0.0.0.0:$PORT"
+web: env > .env; env GEM_HOME=$HOME/.ruby-gems env PATH=PATH:$HOME/.ruby-gems/bin foreman start -f ProcfileFree

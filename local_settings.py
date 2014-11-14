@@ -49,9 +49,13 @@ from memcacheify import memcacheify
 CACHES = memcacheify()
 
 ### Celery
-
+BROKER_POOL_LIMIT = 5
 BROKER_URL = os.environ['REDISTOGO_URL']
+BROKER_TRANSPORT_OPTIONS = {
+        'max_connections': 1,
+        }
 CELERY_RESULT_BACKEND = os.environ['REDISTOGO_URL']
+CELERY_REDIS_MAX_CONNECTIONS = 5
 CELERY_ALWAYS_EAGER = True
 
 ### E-mail

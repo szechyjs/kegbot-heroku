@@ -42,7 +42,7 @@ STATIC_ROOT = ''
 
 # URL of the directory above. The default is '/static/'. Note that the directory
 # name given in STATIC_ROOT does not affect this.
-STATIC_URL = 'http://' + os.environ['AWS_S3_CUSTOM_DOMAIN'] + '/'
+STATIC_URL = '//%s/' % AWS_S3_CUSTOM_DOMAIN
 
 ### Cache
 from memcacheify import memcacheify

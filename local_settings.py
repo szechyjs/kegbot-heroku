@@ -1,12 +1,11 @@
 # Local settings for kegbot.
 # Edit settings, then copy this file to /etc/kegbot/local_settings.py or
 # ~/.kegbot/local_settings.py
+import os
 
 # Disable DEBUG mode when serving external traffic.
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-
-import os
 
 ### Database configuration
 import dj_database_url

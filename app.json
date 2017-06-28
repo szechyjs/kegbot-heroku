@@ -45,6 +45,6 @@
     }
   },
   "scripts": {
-    "postdeploy": "kegbot syncdb --noinput -v 0 && kegbot migrate --fake --noinput -v 0 && kegbot collectstatic --noinput"
+    "postdeploy": "kegbot upgrade"
   }
 }

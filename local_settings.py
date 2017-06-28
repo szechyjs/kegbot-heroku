@@ -58,10 +58,9 @@ CELERY_REDIS_MAX_CONNECTIONS = 5
 CELERY_ALWAYS_EAGER = True
 
 ### E-mail
-EMAIL_BACKEND = 'postmark.django_backend.EmailBackend'
+EMAIL_BACKEND = 'sgbackend.SendGridBackend'
 EMAIL_FROM_ADDRESS = os.environ['EMAIL_FROM_ADDRESS']
-POSTMARK_SENDER = os.environ['EMAIL_FROM_ADDRESS']
-POSTMARK_API_KEY = os.environ['POSTMARK_API_KEY']
+SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
 
 from pykeg.settings import LOGGING
 LOGGING['handlers']['redis']['url'] = os.environ['REDISTOGO_URL']

@@ -11,7 +11,7 @@
     "memcachier",
     "heroku-postgresql",
     "redistogo",
-    "postmark"
+    "sendgrid"
   ],
   "env": {
     "KEGBOT_SETTINGS_DIR": "/app/",

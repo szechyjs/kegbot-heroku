@@ -45,6 +45,6 @@
     }
   },
   "scripts": {
-    "postdeploy": "kegbot migrate && kegbot upgrade"
+    "postdeploy": "kegbot migrate --noinput -v 0 && kegbot upgrade"
   }
 }

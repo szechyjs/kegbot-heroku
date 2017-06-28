@@ -58,9 +58,12 @@ CELERY_REDIS_MAX_CONNECTIONS = 5
 CELERY_ALWAYS_EAGER = True
 
 ### E-mail
-EMAIL_BACKEND = 'sgbackend.SendGridBackend'
 EMAIL_FROM_ADDRESS = os.environ['EMAIL_FROM_ADDRESS']
-SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
+EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 from pykeg.settings import LOGGING
 LOGGING['handlers']['redis']['url'] = os.environ['REDISTOGO_URL']
